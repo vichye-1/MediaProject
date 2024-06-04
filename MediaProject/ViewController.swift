@@ -83,14 +83,12 @@ class ViewController: UIViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .black
         
         userNameLabel.userNameUI()
-        
         movieMainImageview.mainPosterUI()
-        
-        playButton.backgroundColor = .red
-        favoriteListButton.backgroundColor = .blue
+        playButton.playButtonUI()
+        favoriteListButton.nextPageButtonUI()
         
         buttonStackView.axis = .horizontal
         buttonStackView.alignment = .fill
