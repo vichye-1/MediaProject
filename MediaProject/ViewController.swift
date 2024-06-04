@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         
         userNameLabel.userNameUI()
         
-        movieMainImageview.backgroundColor = .yellow
+        movieMainImageview.mainPosterUI()
         
         playButton.backgroundColor = .red
         favoriteListButton.backgroundColor = .blue
