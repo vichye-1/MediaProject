@@ -14,4 +14,11 @@ extension UILabel {
         self.font = .boldSystemFont(ofSize: 20)
         self.textAlignment = .center
     }
+    
+    func hotMovieLabelUI() {
+        self.text = "지금 뜨는 콘텐츠"
+        self.textColor = .white
+        self.textAlignment = .left
+        self.font = .systemFont(ofSize: 20)
+    }
 }

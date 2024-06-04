@@ -29,6 +29,12 @@ class ViewController: UIViewController {
         favoriteListButton.addTarget(self, action: #selector(nextPageButtonClicked), for: .touchUpInside)
     }
     
+    @objc func nextPageButtonClicked() {
+        let nextVC = SignUpViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+    
     func configureHierarchy() {
         view.addSubview(userNameLabel)
         view.addSubview(movieMainImageview)
@@ -90,27 +96,33 @@ class ViewController: UIViewController {
         playButton.playButtonUI()
         favoriteListButton.nextPageButtonUI()
         
+        hotMovie1.image = .알라딘
+        hotMovie1.hotMoviesUI()
+        hotMovie2.image = .암살
+        hotMovie2.hotMoviesUI()
+        hotmovie3.image = .아바타
+        hotmovie3.hotMoviesUI()
+        
+        mainButtonStackView()
+        
+        hotMovieLabel.hotMovieLabelUI()
+        
+        hotMovieStackView()
+        
+    }
+    
+    func mainButtonStackView() {
         buttonStackView.axis = .horizontal
         buttonStackView.alignment = .fill
         buttonStackView.distribution = .fillEqually
         buttonStackView.spacing = 10
-        
-        hotMovieLabel.backgroundColor = .white
-
-        hotMovie1.backgroundColor = .red
-        hotMovie2.backgroundColor = .green
-        hotmovie3.backgroundColor = .blue
-        
+    }
+    
+    func hotMovieStackView() {
         hotStackView.axis = .horizontal
         hotStackView.alignment = .fill
         hotStackView.distribution = .fillEqually
         hotStackView.spacing = 10
-    }
-    
-    @objc func nextPageButtonClicked() {
-        let nextVC = SignUpViewController()
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
     }
     
 }

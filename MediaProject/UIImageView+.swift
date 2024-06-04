@@ -14,4 +14,10 @@ extension UIImageView {
         self.layer.cornerRadius = 15
         self.contentMode = .scaleAspectFill
     }
+    
+    func hotMoviesUI() {
+        self.contentMode = .scaleAspectFill
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 7
+    }
 }
