@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     let hotMovieLabel = UILabel()
     let hotMovie1 = UIImageView()
     let hotMovie2 = UIImageView()
-    let hotmoview3 = UIImageView()
+    let hotmovie3 = UIImageView()
+    let hotStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,14 @@ class ViewController: UIViewController {
         view.addSubview(hotMovieLabel)
         view.addSubview(hotMovie1)
         view.addSubview(hotMovie2)
-        view.addSubview(hotmoview3)
+        view.addSubview(hotmovie3)
         view.addSubview(buttonStackView)
+        view.addSubview(hotStackView)
         buttonStackView.addArrangedSubview(playButton)
         buttonStackView.addArrangedSubview(favoriteListButton)
+        hotStackView.addArrangedSubview(hotMovie1)
+        hotStackView.addArrangedSubview(hotMovie2)
+        hotStackView.addArrangedSubview(hotmovie3)
     }
     
     func configureLayout() {
@@ -62,6 +67,18 @@ class ViewController: UIViewController {
             make.height.equalTo(40)
         }
         
+        hotMovieLabel.snp.makeConstraints { make in
+            make.top.equalTo(movieMainImageview.snp.bottom).offset(10)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
+            make.height.equalTo(34)
+        }
+        
+        hotStackView.snp.makeConstraints { make in
+            make.top.equalTo(hotMovieLabel.snp.bottom).offset(20)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
+        }
     }
     
     func configureUI() {
@@ -76,8 +93,15 @@ class ViewController: UIViewController {
         buttonStackView.distribution = .fillEqually
         buttonStackView.spacing = 10
         
+        hotMovieLabel.backgroundColor = .white
+
+        hotMovie1.backgroundColor = .red
+        hotMovie2.backgroundColor = .green
+        hotmovie3.backgroundColor = .blue
+        
+        hotStackView.axis = .horizontal
+        hotStackView.alignment = .fill
+        hotStackView.distribution = .fillEqually
+        hotStackView.spacing = 10
     }
-
-
 }
-
