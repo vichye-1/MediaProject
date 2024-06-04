@@ -108,7 +108,7 @@ class ViewController: UIViewController {
         
     @objc func nextPageButtonClicked() {
         let nextVC = SignUpViewController()
-        //nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
 }
