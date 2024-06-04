@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController {
         }
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(logoLabel.snp.bottom).offset(150)
+            make.top.equalTo(logoLabel.snp.bottom).offset(130)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(34)
             make.height.equalTo(34)
         }
@@ -75,6 +75,24 @@ class SignUpViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(34)
             make.height.equalTo(34)
         }
+        
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(codeTextField.snp.bottom).offset(16)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(34)
+            make.height.equalTo(48)
+        }
+        
+        extraInfoLabel.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.bottom).offset(20)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(34)
+            make.height.equalTo(34)
+            make.width.equalTo(150)
+        }
+        
+        redSwitch.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.bottom).offset(20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(34)
+        }
     }
     
     func configureUI() {
@@ -89,5 +107,7 @@ class SignUpViewController: UIViewController {
         codeTextField.backgroundColor = .blue
         
         signUpButton.backgroundColor = .white
+        
+        extraInfoLabel.backgroundColor = .magenta
     }
 }
