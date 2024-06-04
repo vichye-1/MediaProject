@@ -84,8 +84,11 @@ class ViewController: UIViewController {
     
     func configureUI() {
         view.backgroundColor = .darkGray
-        userNameLabel.backgroundColor = .white
+        
+        userNameLabelUI()
+        
         movieMainImageview.backgroundColor = .yellow
+        
         playButton.backgroundColor = .red
         favoriteListButton.backgroundColor = .blue
         
@@ -105,10 +108,18 @@ class ViewController: UIViewController {
         hotStackView.distribution = .fillEqually
         hotStackView.spacing = 10
     }
+    
+    func userNameLabelUI() {
+        userNameLabel.text = "승혜님"
+        userNameLabel.textColor = .white
+        userNameLabel.font = .boldSystemFont(ofSize: 20)
+        userNameLabel.textAlignment = .center
+    }
         
     @objc func nextPageButtonClicked() {
         let nextVC = SignUpViewController()
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
+    
 }
