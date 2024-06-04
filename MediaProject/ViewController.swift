@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             make.top.equalTo(userNameLabel.snp.bottom).offset(10)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
-            make.height.equalTo(350)
+            make.height.equalTo(380)
         }
         
         buttonStackView.snp.makeConstraints { make in
@@ -68,13 +68,13 @@ class ViewController: UIViewController {
         }
         
         hotMovieLabel.snp.makeConstraints { make in
-            make.top.equalTo(movieMainImageview.snp.bottom).offset(10)
+            make.top.equalTo(movieMainImageview.snp.bottom).offset(16)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(34)
         }
         
         hotStackView.snp.makeConstraints { make in
-            make.top.equalTo(hotMovieLabel.snp.bottom).offset(20)
+            make.top.equalTo(hotMovieLabel.snp.bottom).offset(16)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
