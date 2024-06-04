@@ -19,12 +19,18 @@ class SignUpViewController: UIViewController {
     let signUpButton = UIButton()
     let extraInfoLabel = UILabel()
     let redSwitch = UISwitch()
+    let goBackButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureUI()
+        goBackButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func backButtonClicked() {
+        dismiss(animated: true)
     }
     
     func configureHierarchy() {
@@ -37,6 +43,7 @@ class SignUpViewController: UIViewController {
         view.addSubview(signUpButton)
         view.addSubview(extraInfoLabel)
         view.addSubview(redSwitch)
+        view.addSubview(goBackButton)
     }
     
     func configureLayout() {
@@ -93,21 +100,32 @@ class SignUpViewController: UIViewController {
             make.top.equalTo(signUpButton.snp.bottom).offset(20)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(34)
         }
+        
+        goBackButton.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(34)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(34)
+            make.height.equalTo(48)
+        }
     }
     
     func configureUI() {
+        let placeholders = ["이메일 주소 또는 전화번호", "비밀번호", "닉네임", "위치", "추천 코드 입력"]
         view.backgroundColor = .black
         
-        logoLabel.backgroundColor = .systemOrange
+        logoLabel.logoLabelUI()
         
-        emailTextField.backgroundColor = .red
-        passwordTextField.backgroundColor = .orange
-        nicknameTextField.backgroundColor = .yellow
-        locationTextField.backgroundColor = .green
-        codeTextField.backgroundColor = .blue
+        emailTextField.signUpTextField(placeholders[0])
+        passwordTextField.signUpTextField(placeholders[1])
+        nicknameTextField.signUpTextField(placeholders[2])
+        locationTextField.signUpTextField(placeholders[3])
+        codeTextField.signUpTextField(placeholders[4])
         
-        signUpButton.backgroundColor = .white
+        signUpButton.signUpButtonUI()
         
-        extraInfoLabel.backgroundColor = .magenta
+        extraInfoLabel.extraInfoLabel()
+        
+        redSwitch.onTintColor = .red
+        
+        goBackButton.goBackButton()
     }
 }

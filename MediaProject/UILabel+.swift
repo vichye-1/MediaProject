@@ -21,4 +21,18 @@ extension UILabel {
         self.textAlignment = .left
         self.font = .systemFont(ofSize: 20)
     }
+    
+    func logoLabelUI() {
+        self.text = "HYEFLIX"
+        self.textColor = .red
+        self.textAlignment = .center
+        self.font = .systemFont(ofSize: 30, weight: .black)
+    }
+    
+    func extraInfoLabel() {
+        self.text = "추가 정보 입력"
+        self.textColor = .white
+        self.textAlignment = .left
+        self.font = .systemFont(ofSize: 17)
+    }
 }

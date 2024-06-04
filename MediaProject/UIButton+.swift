@@ -28,4 +28,20 @@ extension UIButton {
         self.setTitleColor(.white, for: .normal)
         self.layer.cornerRadius = 5
     }
+    
+    func signUpButtonUI() {
+        self.setTitle("회원가입", for: .normal)
+        self.setTitleColor(.black, for: .normal)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 5
+    }
+    
+    func goBackButton() {
+        self.setTitle("뒤로 돌아가기", for: .normal)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        self.backgroundColor = .red
+        self.layer.cornerRadius = 5
+    }
 }
