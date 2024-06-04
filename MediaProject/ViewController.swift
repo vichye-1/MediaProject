@@ -40,15 +40,18 @@ class ViewController: UIViewController {
     func configureLayout() {
         userNameLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalTo(16)
-            make.trailing.equalTo(-16)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(24)
+        }
+        
+        movieMainImageview.snp.makeConstraints { make in
+            
         }
         
     }
     
     func configureUI() {
-        view.backgroundColor = .gray
+        view.backgroundColor = .darkGray
         userNameLabel.backgroundColor = .white
         movieMainImageview.backgroundColor = .white
     }
