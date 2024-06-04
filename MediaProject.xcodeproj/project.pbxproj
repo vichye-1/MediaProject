@@ -15,6 +15,7 @@
 		EF79C26E2C0EF619009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C26D2C0EF619009E66BD /* Base */; };
 		EF79C2762C0EFD3E009E66BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2752C0EFD3E009E66BD /* SignUpViewController.swift */; };
 		EF79C2792C0EFEFB009E66BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2782C0EFEFB009E66BD /* SnapKit */; };
+		EF79C27B2C0F2D65009E66BD /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C27A2C0F2D65009E66BD /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EF79C26D2C0EF619009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF79C26F2C0EF619009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF79C2752C0EFD3E009E66BD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EF79C27A2C0F2D65009E66BD /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				EF79C26A2C0EF619009E66BD /* Assets.xcassets */,
 				EF79C26C2C0EF619009E66BD /* LaunchScreen.storyboard */,
 				EF79C26F2C0EF619009E66BD /* Info.plist */,
+				EF79C27A2C0F2D65009E66BD /* UILabel+.swift */,
 			);
 			path = MediaProject;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				EF79C2662C0EF618009E66BD /* ViewController.swift in Sources */,
 				EF79C2622C0EF618009E66BD /* AppDelegate.swift in Sources */,
+				EF79C27B2C0F2D65009E66BD /* UILabel+.swift in Sources */,
 				EF79C2762C0EFD3E009E66BD /* SignUpViewController.swift in Sources */,
 				EF79C2642C0EF618009E66BD /* SceneDelegate.swift in Sources */,
 			);

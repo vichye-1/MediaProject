@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .darkGray
         
-        userNameLabelUI()
+        userNameLabel.userNameUI()
         
         movieMainImageview.backgroundColor = .yellow
         
@@ -109,13 +109,6 @@ class ViewController: UIViewController {
         hotStackView.spacing = 10
     }
     
-    func userNameLabelUI() {
-        userNameLabel.text = "승혜님"
-        userNameLabel.textColor = .white
-        userNameLabel.font = .boldSystemFont(ofSize: 20)
-        userNameLabel.textAlignment = .center
-    }
-        
     @objc func nextPageButtonClicked() {
         let nextVC = SignUpViewController()
         nextVC.modalPresentationStyle = .fullScreen
