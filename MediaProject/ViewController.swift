@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        favoriteListButton.addTarget(self, action: #selector(nextPageButtonClicked), for: .touchUpInside)
     }
     
     func configureHierarchy() {
@@ -103,5 +104,11 @@ class ViewController: UIViewController {
         hotStackView.alignment = .fill
         hotStackView.distribution = .fillEqually
         hotStackView.spacing = 10
+    }
+        
+    @objc func nextPageButtonClicked() {
+        let nextVC = SignUpViewController()
+        //nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
     }
 }

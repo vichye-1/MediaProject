@@ -63,11 +63,11 @@
 				EF79C2612C0EF618009E66BD /* AppDelegate.swift */,
 				EF79C2632C0EF618009E66BD /* SceneDelegate.swift */,
 				EF79C2652C0EF618009E66BD /* ViewController.swift */,
+				EF79C2752C0EFD3E009E66BD /* SignUpViewController.swift */,
 				EF79C2672C0EF618009E66BD /* Main.storyboard */,
 				EF79C26A2C0EF619009E66BD /* Assets.xcassets */,
 				EF79C26C2C0EF619009E66BD /* LaunchScreen.storyboard */,
 				EF79C26F2C0EF619009E66BD /* Info.plist */,
-				EF79C2752C0EFD3E009E66BD /* SignUpViewController.swift */,
 			);
 			path = MediaProject;
 			sourceTree = "<group>";
