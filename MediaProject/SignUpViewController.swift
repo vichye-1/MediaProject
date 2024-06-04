@@ -27,7 +27,15 @@ class SignUpViewController: UIViewController {
     }
     
     func configureHierarchy() {
-        
+        view.addSubview(logoLabel)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(nicknameTextField)
+        view.addSubview(locationTextField)
+        view.addSubview(codeTextField)
+        view.addSubview(signUpButton)
+        view.addSubview(extraInfoLabel)
+        view.addSubview(redSwitch)
     }
     
     func configureLayout() {
@@ -36,5 +44,7 @@ class SignUpViewController: UIViewController {
     
     func configureUI() {
         view.backgroundColor = .black
+        
+        logoLabel.backgroundColor = .systemOrange
     }
 }
