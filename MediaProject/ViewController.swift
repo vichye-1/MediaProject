@@ -103,23 +103,15 @@ class ViewController: UIViewController {
             movieImageUI[idx].posterImageUI(imageName: movies[idx], radius: 7)
         }
         
-        mainButtonStackView()
+        stackViewSettings(movieStackView: buttonStackView)
+        stackViewSettings(movieStackView: hotStackView)
         hotMovieLabel.hotMovieLabelUI()
-        hotMovieStackView()
     }
     
-    func mainButtonStackView() {
-        buttonStackView.axis = .horizontal
-        buttonStackView.alignment = .fill
-        buttonStackView.distribution = .fillEqually
-        buttonStackView.spacing = 10
+    func stackViewSettings(movieStackView: UIStackView) {
+        movieStackView.axis = .horizontal
+        movieStackView.alignment = .fill
+        movieStackView.distribution = .fillEqually
+        movieStackView.spacing = 10
     }
-    
-    func hotMovieStackView() {
-        hotStackView.axis = .horizontal
-        hotStackView.alignment = .fill
-        hotStackView.distribution = .fillEqually
-        hotStackView.spacing = 10
-    }
-    
 }
