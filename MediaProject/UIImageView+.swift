@@ -8,16 +8,10 @@
 import UIKit
 
 extension UIImageView {
-    func mainPosterUI() {
-        self.image = .어벤져스엔드게임
+    func posterImageUI(imageName: String ,radius: CGFloat) {
+        self.image = UIImage(named: imageName)
         self.clipsToBounds = true
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = radius
         self.contentMode = .scaleAspectFill
-    }
-    
-    func hotMoviesUI() {
-        self.contentMode = .scaleAspectFill
-        self.clipsToBounds = true
-        self.layer.cornerRadius = 7
     }
 }

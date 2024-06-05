@@ -92,23 +92,20 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
         
         userNameLabel.userNameUI()
-        movieMainImageview.mainPosterUI()
+        movieMainImageview.posterImageUI(imageName: "어벤져스엔드게임", radius: 15)
         playButton.playButtonUI()
         favoriteListButton.nextPageButtonUI()
         
-        hotMovie1.image = .알라딘
-        hotMovie1.hotMoviesUI()
-        hotMovie2.image = .암살
-        hotMovie2.hotMoviesUI()
-        hotmovie3.image = .아바타
-        hotmovie3.hotMoviesUI()
+        let movies = ["알라딘", "암살", "아바타"]
+        let movieImageUI = [hotMovie1, hotMovie2, hotmovie3]
+        
+        for idx in 0..<movies.count {
+            movieImageUI[idx].posterImageUI(imageName: movies[idx], radius: 7)
+        }
         
         mainButtonStackView()
-        
         hotMovieLabel.hotMovieLabelUI()
-        
         hotMovieStackView()
-        
     }
     
     func mainButtonStackView() {
