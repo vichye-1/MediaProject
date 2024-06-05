@@ -10,6 +10,7 @@ import UIKit
 extension UIButton {
     func playButtonUI() {
         self.backgroundColor = .white
+        //self.setBackgroundImage(UIImage(named: "재생"), for: .normal)
         self.setImage(UIImage(systemName: "play.fill"), for: .normal)
         self.setTitle("재생", for: .normal)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)

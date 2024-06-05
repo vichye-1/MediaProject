@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     let userNameLabel = UILabel()
     let movieMainImageview = UIImageView()
-    let playButton = UIButton()
+    let playButton = UIButton(type: .custom)
     let favoriteListButton = UIButton()
     let buttonStackView = UIStackView()
     let hotMovieLabel = UILabel()
@@ -38,12 +38,7 @@ class ViewController: UIViewController {
     func configureHierarchy() {
         view.addSubview(userNameLabel)
         view.addSubview(movieMainImageview)
-        view.addSubview(playButton)
-        view.addSubview(favoriteListButton)
         view.addSubview(hotMovieLabel)
-        view.addSubview(hotMovie1)
-        view.addSubview(hotMovie2)
-        view.addSubview(hotmovie3)
         view.addSubview(buttonStackView)
         view.addSubview(hotStackView)
         buttonStackView.addArrangedSubview(playButton)
