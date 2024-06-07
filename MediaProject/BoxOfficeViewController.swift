@@ -25,7 +25,7 @@ class BoxOfficeViewController: UIViewController {
     }
     
     func configureUI() {
-        
+        view.backgroundColor = .darkGray
     }
     
 
