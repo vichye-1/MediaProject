@@ -49,14 +49,14 @@ class ViewController: UIViewController {
     }
     
     func configureLayout() {
-        userNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.height.equalTo(40)
-        }
+//        userNameLabel.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide)
+//            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
+//            make.height.equalTo(40)
+//        }
         
         movieMainImageview.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(10)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
             make.height.equalTo(380)
@@ -86,7 +86,9 @@ class ViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .black
         
-        userNameLabel.userNameUI()
+        navigationItem.title = "승혜님"
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         movieMainImageview.posterImageUI(imageName: "어벤져스엔드게임", radius: 15)
         playButton.playButtonUI()
         favoriteListButton.nextPageButtonUI()

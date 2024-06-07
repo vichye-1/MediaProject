@@ -19,6 +19,7 @@
 		EF79C27D2C0F2E3B009E66BD /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C27C2C0F2E3B009E66BD /* UIImageView+.swift */; };
 		EF79C27F2C0F31CC009E66BD /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C27E2C0F31CC009E66BD /* UIButton+.swift */; };
 		EF79C2812C0F6ED3009E66BD /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2802C0F6ED3009E66BD /* UITextField+.swift */; };
+		EF79C3092C12E86F009E66BD /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EF79C27C2C0F2E3B009E66BD /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		EF79C27E2C0F31CC009E66BD /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		EF79C2802C0F6ED3009E66BD /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		EF79C2602C0EF618009E66BD /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF79C3072C12E688009E66BD /* extensions */,
 				EF79C2612C0EF618009E66BD /* AppDelegate.swift */,
 				EF79C2632C0EF618009E66BD /* SceneDelegate.swift */,
 				EF79C2652C0EF618009E66BD /* ViewController.swift */,
@@ -76,12 +79,20 @@
 				EF79C26A2C0EF619009E66BD /* Assets.xcassets */,
 				EF79C26C2C0EF619009E66BD /* LaunchScreen.storyboard */,
 				EF79C26F2C0EF619009E66BD /* Info.plist */,
+				EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */,
+			);
+			path = MediaProject;
+			sourceTree = "<group>";
+		};
+		EF79C3072C12E688009E66BD /* extensions */ = {
+			isa = PBXGroup;
+			children = (
 				EF79C27A2C0F2D65009E66BD /* UILabel+.swift */,
 				EF79C27C2C0F2E3B009E66BD /* UIImageView+.swift */,
 				EF79C27E2C0F31CC009E66BD /* UIButton+.swift */,
 				EF79C2802C0F6ED3009E66BD /* UITextField+.swift */,
 			);
-			path = MediaProject;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				EF79C2762C0EFD3E009E66BD /* SignUpViewController.swift in Sources */,
 				EF79C2642C0EF618009E66BD /* SceneDelegate.swift in Sources */,
 				EF79C2812C0F6ED3009E66BD /* UITextField+.swift in Sources */,
+				EF79C3092C12E86F009E66BD /* BoxOfficeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
