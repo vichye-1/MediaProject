@@ -20,6 +20,7 @@
 		EF79C2812C0F6ED3009E66BD /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2802C0F6ED3009E66BD /* UITextField+.swift */; };
 		EF79C3092C12E86F009E66BD /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */; };
 		EF79C30C2C12F72E009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C30B2C12F72E009E66BD /* Alamofire */; };
+		EF79C30E2C12F7ED009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C30D2C12F7ED009E66BD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EF79C27E2C0F31CC009E66BD /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		EF79C2802C0F6ED3009E66BD /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
+		EF79C30D2C12F7ED009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		EF79C2552C0EF618009E66BD = {
 			isa = PBXGroup;
 			children = (
+				EF79C30D2C12F7ED009E66BD /* .gitignore */,
 				EF79C2602C0EF618009E66BD /* MediaProject */,
 				EF79C25F2C0EF618009E66BD /* Products */,
 			);
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF79C26B2C0EF619009E66BD /* Assets.xcassets in Resources */,
+				EF79C30E2C12F7ED009E66BD /* .gitignore in Resources */,
 				EF79C26E2C0EF619009E66BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
