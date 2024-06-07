@@ -7,9 +7,12 @@
 
 import UIKit
 import Alamofire
+import SnapKit
 
 class BoxOfficeViewController: UIViewController {
-
+    
+    var movieTextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
