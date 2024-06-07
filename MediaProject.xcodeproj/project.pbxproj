@@ -21,6 +21,7 @@
 		EF79C3092C12E86F009E66BD /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */; };
 		EF79C30C2C12F72E009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C30B2C12F72E009E66BD /* Alamofire */; };
 		EF79C30E2C12F7ED009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C30D2C12F7ED009E66BD /* .gitignore */; };
+		EF79C3102C12F9CB009E66BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C30F2C12F9CB009E66BD /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EF79C2802C0F6ED3009E66BD /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		EF79C30D2C12F7ED009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EF79C30F2C12F9CB009E66BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				EF79C26C2C0EF619009E66BD /* LaunchScreen.storyboard */,
 				EF79C26F2C0EF619009E66BD /* Info.plist */,
 				EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */,
+				EF79C30F2C12F9CB009E66BD /* APIKey.swift */,
 			);
 			path = MediaProject;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				EF79C27F2C0F31CC009E66BD /* UIButton+.swift in Sources */,
 				EF79C2662C0EF618009E66BD /* ViewController.swift in Sources */,
 				EF79C2622C0EF618009E66BD /* AppDelegate.swift in Sources */,
+				EF79C3102C12F9CB009E66BD /* APIKey.swift in Sources */,
 				EF79C27B2C0F2D65009E66BD /* UILabel+.swift in Sources */,
 				EF79C2762C0EFD3E009E66BD /* SignUpViewController.swift in Sources */,
 				EF79C2642C0EF618009E66BD /* SceneDelegate.swift in Sources */,
