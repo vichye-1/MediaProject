@@ -19,6 +19,7 @@
 		EF79C27F2C0F31CC009E66BD /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C27E2C0F31CC009E66BD /* UIButton+.swift */; };
 		EF79C2812C0F6ED3009E66BD /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2802C0F6ED3009E66BD /* UITextField+.swift */; };
 		EF79C3092C12E86F009E66BD /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3082C12E86F009E66BD /* BoxOfficeViewController.swift */; };
+		EF79C30C2C12F72E009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C30B2C12F72E009E66BD /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF79C2792C0EFEFB009E66BD /* SnapKit in Frameworks */,
+				EF79C30C2C12F72E009E66BD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +112,7 @@
 			name = MediaProject;
 			packageProductDependencies = (
 				EF79C2782C0EFEFB009E66BD /* SnapKit */,
+				EF79C30B2C12F72E009E66BD /* Alamofire */,
 			);
 			productName = MediaProject;
 			productReference = EF79C25E2C0EF618009E66BD /* MediaProject.app */;
@@ -141,6 +144,7 @@
 			mainGroup = EF79C2552C0EF618009E66BD;
 			packageReferences = (
 				EF79C2772C0EFEFB009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EF79C30A2C12F72E009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = EF79C25F2C0EF618009E66BD /* Products */;
 			projectDirPath = "";
@@ -407,6 +411,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		EF79C30A2C12F72E009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -414,6 +426,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF79C2772C0EFEFB009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EF79C30B2C12F72E009E66BD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C30A2C12F72E009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
