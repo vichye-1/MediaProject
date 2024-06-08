@@ -13,6 +13,7 @@ class BoxOfficeViewController: UIViewController {
     
     var movieTextField = UITextField()
     let searchButton = UIButton()
+    let underLineView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class BoxOfficeViewController: UIViewController {
     func configureHierarchy() {
         view.addSubview(movieTextField)
         view.addSubview(searchButton)
+        view.addSubview(underLineView)
     }
     
     func configureLayout() {
@@ -38,7 +40,14 @@ class BoxOfficeViewController: UIViewController {
             make.leading.equalTo(movieTextField.snp.trailing).offset(8)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.width.equalTo(70)
-            make.height.equalTo(48)
+            make.height.equalTo(53)
+        }
+        
+        underLineView.snp.makeConstraints { make in
+            make.top.equalTo(movieTextField.snp.bottom)
+            make.leading.equalTo(movieTextField.snp.leading)
+            make.trailing.equalTo(movieTextField.snp.trailing)
+            make.height.equalTo(5)
         }
     }
     
@@ -46,6 +55,7 @@ class BoxOfficeViewController: UIViewController {
         view.backgroundColor = .white
         movieTextField.backgroundColor = .darkGray
         searchButton.backgroundColor = .brown
+        underLineView.backgroundColor = .black
     }
     
 
