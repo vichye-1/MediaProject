@@ -10,7 +10,8 @@ import Alamofire
 import SnapKit
 
 class BoxOfficeViewController: UIViewController {
-    
+    let movieImage = UIImageView()
+    let backgroundColorView = UIView()
     var movieTextField = UITextField()
     let searchButton = UIButton()
     let underLineView = UIView()
@@ -25,6 +26,8 @@ class BoxOfficeViewController: UIViewController {
     }
     
     func configureHierarchy() {
+        view.addSubview(movieImage)
+        view.addSubview(backgroundColorView)
         view.addSubview(movieTextField)
         view.addSubview(searchButton)
         view.addSubview(underLineView)
@@ -32,6 +35,14 @@ class BoxOfficeViewController: UIViewController {
     }
     
     func configureLayout() {
+        movieImage.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        
+        backgroundColorView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        
         movieTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
@@ -60,11 +71,11 @@ class BoxOfficeViewController: UIViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .white
+        movieImage.image = UIImage(named: "movieImage")
+        backgroundColorView.backgroundColor = UIColor.black.withAlphaComponent(0.85)
         movieTextField.backgroundColor = .darkGray
         searchButton.backgroundColor = .brown
         underLineView.backgroundColor = .black
-        movieTableView.backgroundColor = .darkGray
     }
     
     func configureTableView() {
@@ -73,6 +84,7 @@ class BoxOfficeViewController: UIViewController {
         movieTableView.delegate = self
         movieTableView.dataSource = self
         movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: identifier)
+        movieTableView.backgroundColor = .clear
     }
 }
 
@@ -84,6 +96,7 @@ extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = BoxOfficeTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! BoxOfficeTableViewCell
+        cell.backgroundColor = .clear
         return cell
     }
 }
