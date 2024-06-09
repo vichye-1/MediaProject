@@ -46,15 +46,15 @@ class BoxOfficeViewController: UIViewController {
         movieTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
-            make.height.equalTo(48)
+            make.height.equalTo(43)
         }
         
         searchButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalTo(movieTextField.snp.trailing).offset(8)
+            make.leading.equalTo(movieTextField.snp.trailing).offset(20)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.width.equalTo(70)
-            make.height.equalTo(53)
+            make.height.equalTo(48)
         }
         
         underLineView.snp.makeConstraints { make in
@@ -73,9 +73,12 @@ class BoxOfficeViewController: UIViewController {
     func configureUI() {
         movieImage.image = UIImage(named: "movieImage")
         backgroundColorView.backgroundColor = UIColor.black.withAlphaComponent(0.85)
-        movieTextField.backgroundColor = .darkGray
-        searchButton.backgroundColor = .brown
-        underLineView.backgroundColor = .black
+        movieTextField.backgroundColor = .clear
+        movieTextField.textColor = .white
+        searchButton.backgroundColor = .white
+        searchButton.setTitle("검색", for: .normal)
+        searchButton.setTitleColor(.black, for: .normal)
+        underLineView.backgroundColor = .white
     }
     
     func configureTableView() {
