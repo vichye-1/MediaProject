@@ -10,7 +10,7 @@ import SnapKit
 
 class BoxOfficeTableViewCell: UITableViewCell {
     
-    let lankingLabel = UILabel()
+    let rankingLabel = UILabel()
     let titleLabel = UILabel()
     let dateLabel = UILabel()
 
@@ -26,25 +26,36 @@ class BoxOfficeTableViewCell: UITableViewCell {
     }
     
     func configureTableViewCellHierarchy() {
-        contentView.addSubview(lankingLabel)
+        contentView.addSubview(rankingLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(dateLabel)
     }
     
     func configureTableViewCellLayout() {
-        lankingLabel.snp.makeConstraints { make in
+        rankingLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
             make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
             make.width.equalTo(40)
         }
+        dateLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(16)
+            make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
+            make.width.equalTo(70)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(rankingLabel.snp.trailing).offset(20)
+            make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
+            make.trailing.equalTo(dateLabel.snp.leading).offset(-20)
+        }
     }
     
     func configureTableViewCellUI() {
-        lankingLabel.backgroundColor = .blue
+        rankingLabel.backgroundColor = .blue
+        titleLabel.backgroundColor = .purple
+        dateLabel.backgroundColor = .cyan
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
