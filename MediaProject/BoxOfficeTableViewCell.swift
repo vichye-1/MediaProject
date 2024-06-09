@@ -20,11 +20,9 @@ class BoxOfficeTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configureTableViewCellHierarchy()
         configureTableViewCellLayout()
         configureTableViewCellUI()
-        
     }
     
     func configureTableViewCellHierarchy() {
@@ -34,8 +32,8 @@ class BoxOfficeTableViewCell: UITableViewCell {
     func configureTableViewCellLayout() {
         lankingLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
-            make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(4)
-            make.width.equalTo(20)
+            make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
+            make.width.equalTo(40)
         }
     }
     

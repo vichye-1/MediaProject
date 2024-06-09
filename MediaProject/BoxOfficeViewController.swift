@@ -69,7 +69,7 @@ class BoxOfficeViewController: UIViewController {
     
     func configureTableView() {
         let identifier = BoxOfficeTableViewCell.identifier
-        movieTableView.rowHeight = 60
+        movieTableView.rowHeight = 40
         movieTableView.delegate = self
         movieTableView.dataSource = self
         movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: identifier)
