@@ -159,7 +159,7 @@ class BoxOfficeViewController: UIViewController {
     
     @objc func searchButtonTapped() {
         guard let dateStr = movieTextField.text, isValidate(dateStr: dateStr) else {
-            return
+            return alertAction()
         }
         callRequest(date: dateStr)
     }
@@ -168,6 +168,13 @@ class BoxOfficeViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.date(from: dateStr) != nil
+    }
+    
+    func alertAction() {
+        let alert = UIAlertController(title: "잘못된 입력입니다", message: "yyyymmdd 형식으로 날짜를 입력하세요", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(yes)
+        present(alert, animated: true)
     }
 }
 
