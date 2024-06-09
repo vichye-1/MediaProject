@@ -42,6 +42,7 @@ class BoxOfficeViewController: UIViewController {
         textField.textColor = .white
         let attribute = NSAttributedString.Key.foregroundColor
         textField.attributedPlaceholder = NSAttributedString(string: "날짜 입력 : yyyymmdd", attributes: [attribute: UIColor.lightGray])
+        textField.keyboardType = .numberPad
         return textField
     }()
     
