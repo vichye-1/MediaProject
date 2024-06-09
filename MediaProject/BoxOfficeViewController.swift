@@ -14,7 +14,6 @@ struct BoxOfficeResult: Decodable {
 }
 
 struct DailyBoxOfficeResult: Decodable {
-    let showRange: String
     let dailyBoxOfficeList: [BoxOffice]
 }
 
