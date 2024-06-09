@@ -24,11 +24,42 @@ struct BoxOffice: Decodable {
 }
 
 class BoxOfficeViewController: UIViewController {
-    let movieImage = UIImageView()
-    let backgroundColorView = UIView()
-    var movieTextField = UITextField()
-    let searchButton = UIButton()
-    let underLineView = UIView()
+    let movieImage: UIImageView = {
+        let mvImage = UIImageView()
+        mvImage.image = UIImage(named: "movieImage")
+        return mvImage
+    }()
+    
+    let backgroundColorView: UIView = {
+        let view =  UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.85)
+        return view
+    }()
+   
+    var movieTextField: UITextField = {
+        let textField = UITextField()
+        textField.backgroundColor = .clear
+        textField.textColor = .white
+        let attribute = NSAttributedString.Key.foregroundColor
+        textField.attributedPlaceholder = NSAttributedString(string: "날짜 입력 : yyyymmdd", attributes: [attribute: UIColor.lightGray])
+        return textField
+    }()
+    
+    let searchButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.setTitle("검색", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        return button
+    }()
+    
+    let underLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     let movieTableView = UITableView()
     
     var movieList: [BoxOffice] = []
@@ -37,9 +68,9 @@ class BoxOfficeViewController: UIViewController {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
-        configureUI()
         configureTableView()
-        callRequest()
+        callRequest(date: getYesterday())
+        configureActions()
     }
     
     func configureHierarchy() {
@@ -78,7 +109,7 @@ class BoxOfficeViewController: UIViewController {
             make.top.equalTo(movieTextField.snp.bottom)
             make.leading.equalTo(movieTextField.snp.leading)
             make.trailing.equalTo(movieTextField.snp.trailing)
-            make.height.equalTo(5)
+            make.height.equalTo(4)
         }
         
         movieTableView.snp.makeConstraints { make in
@@ -86,19 +117,7 @@ class BoxOfficeViewController: UIViewController {
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
-    func configureUI() {
-        movieImage.image = UIImage(named: "movieImage")
-        backgroundColorView.backgroundColor = UIColor.black.withAlphaComponent(0.85)
-        movieTextField.backgroundColor = .clear
-        movieTextField.textColor = .white
-        searchButton.backgroundColor = .white
-        searchButton.setTitle("검색", for: .normal)
-        searchButton.setTitleColor(.black, for: .normal)
-        searchButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        underLineView.backgroundColor = .white
-    }
-    
+        
     func configureTableView() {
         let identifier = BoxOfficeTableViewCell.identifier
         movieTableView.rowHeight = 40
@@ -111,11 +130,9 @@ class BoxOfficeViewController: UIViewController {
         movieTableView.backgroundColor = .clear
     }
     
-    func callRequest() {
-        let url = APIURL.movieURL
-        let yesterday = getYesterday()
-        let yesterdayURL = url + yesterday
-        AF.request(yesterdayURL).responseDecodable(of: BoxOfficeResult.self) { response in
+    func callRequest(date: String) {
+        let url = APIURL.movieURL + date
+        AF.request(url).responseDecodable(of: BoxOfficeResult.self) { response in
             switch response.result {
             case .success(let value):
                 let dailyBoxOfficeData = value.boxOfficeResult.dailyBoxOfficeList
@@ -134,6 +151,23 @@ class BoxOfficeViewController: UIViewController {
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         print(dateFormatter.string(from: yesterday))
         return dateFormatter.string(from: yesterday)
+    }
+    
+    func configureActions() {
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func searchButtonTapped() {
+        guard let dateStr = movieTextField.text, isValidate(dateStr: dateStr) else {
+            return
+        }
+        callRequest(date: dateStr)
+    }
+    
+    func isValidate(dateStr: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.date(from: dateStr) != nil
     }
 }
 
