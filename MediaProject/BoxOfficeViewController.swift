@@ -96,6 +96,7 @@ class BoxOfficeViewController: UIViewController {
         searchButton.backgroundColor = .white
         searchButton.setTitle("검색", for: .normal)
         searchButton.setTitleColor(.black, for: .normal)
+        searchButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         underLineView.backgroundColor = .white
     }
     
