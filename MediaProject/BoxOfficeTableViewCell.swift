@@ -10,9 +10,28 @@ import SnapKit
 
 class BoxOfficeTableViewCell: UITableViewCell {
     
-    let rankingLabel = UILabel()
-    let titleLabel = UILabel()
-    let dateLabel = UILabel()
+    let rankingLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 17)
+        label.textColor = .black
+        return label
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 17)
+        label.textColor = .white
+        return label
+    }()
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 13)
+        return label
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +41,6 @@ class BoxOfficeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
         configureTableViewCellLayout()
-        configureTableViewCellUI()
     }
     
     func configureTableViewCellHierarchy() {
@@ -40,19 +58,13 @@ class BoxOfficeTableViewCell: UITableViewCell {
         dateLabel.snp.makeConstraints { make in
             make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
-            make.width.equalTo(70)
+            make.width.equalTo(80)
         }
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(rankingLabel.snp.trailing).offset(20)
             make.verticalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(10)
             make.trailing.equalTo(dateLabel.snp.leading).offset(-20)
         }
-    }
-    
-    func configureTableViewCellUI() {
-        rankingLabel.backgroundColor = .white
-        titleLabel.backgroundColor = .purple
-        dateLabel.backgroundColor = .cyan
     }
     
     required init?(coder: NSCoder) {

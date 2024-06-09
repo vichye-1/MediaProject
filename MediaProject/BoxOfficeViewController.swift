@@ -32,6 +32,8 @@ class BoxOfficeViewController: UIViewController {
     let underLineView = UIView()
     let movieTableView = UITableView()
     
+    var movieList: [BoxOffice] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
@@ -100,9 +102,12 @@ class BoxOfficeViewController: UIViewController {
     func configureTableView() {
         let identifier = BoxOfficeTableViewCell.identifier
         movieTableView.rowHeight = 40
+        
         movieTableView.delegate = self
         movieTableView.dataSource = self
+        
         movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: identifier)
+        
         movieTableView.backgroundColor = .clear
     }
     
@@ -114,9 +119,9 @@ class BoxOfficeViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let dailyBoxOfficeData = value.boxOfficeResult.dailyBoxOfficeList
-                for movieData in dailyBoxOfficeData {
-                    print(movieData.movieNm)
-                }
+                self.movieList = dailyBoxOfficeData
+                self.movieTableView.reloadData()
+
             case .failure(let error):
                 print(error)
             }
@@ -134,13 +139,20 @@ class BoxOfficeViewController: UIViewController {
 
 extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return movieList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = BoxOfficeTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! BoxOfficeTableViewCell
+        let movie = movieList[indexPath.row]
+        
+        cell.rankingLabel.text = movie.rank
+        cell.titleLabel.text = movie.movieNm
+        cell.dateLabel.text = movie.openDt
+        
         cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         return cell
     }
 }
