@@ -14,18 +14,21 @@ class BoxOfficeViewController: UIViewController {
     var movieTextField = UITextField()
     let searchButton = UIButton()
     let underLineView = UIView()
+    let movieTableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureUI()
+        configureTableView()
     }
     
     func configureHierarchy() {
         view.addSubview(movieTextField)
         view.addSubview(searchButton)
         view.addSubview(underLineView)
+        view.addSubview(movieTableView)
     }
     
     func configureLayout() {
@@ -49,6 +52,11 @@ class BoxOfficeViewController: UIViewController {
             make.trailing.equalTo(movieTextField.snp.trailing)
             make.height.equalTo(5)
         }
+        
+        movieTableView.snp.makeConstraints { make in
+            make.top.equalTo(underLineView.snp.bottom).offset(16)
+            make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     func configureUI() {
@@ -56,7 +64,26 @@ class BoxOfficeViewController: UIViewController {
         movieTextField.backgroundColor = .darkGray
         searchButton.backgroundColor = .brown
         underLineView.backgroundColor = .black
+        movieTableView.backgroundColor = .darkGray
     }
     
+    func configureTableView() {
+        let identifier = BoxOfficeTableViewCell.identifier
+        movieTableView.rowHeight = 60
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
+        movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: identifier)
+    }
+}
 
+extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = BoxOfficeTableViewCell.identifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! BoxOfficeTableViewCell
+        return cell
+    }
 }
