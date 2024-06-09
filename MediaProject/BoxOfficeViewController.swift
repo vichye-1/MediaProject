@@ -9,6 +9,21 @@ import UIKit
 import Alamofire
 import SnapKit
 
+struct BoxOfficeResult: Decodable {
+    let boxOfficeResult: DailyBoxOfficeResult
+}
+
+struct DailyBoxOfficeResult: Decodable {
+    let showRange: String
+    let dailyBoxOfficeList: [BoxOffice]
+}
+
+struct BoxOffice: Decodable {
+    let rank: String
+    let movieNm: String
+    let openDt: String
+}
+
 class BoxOfficeViewController: UIViewController {
     let movieImage = UIImageView()
     let backgroundColorView = UIView()
@@ -23,6 +38,7 @@ class BoxOfficeViewController: UIViewController {
         configureLayout()
         configureUI()
         configureTableView()
+        callRequest()
     }
     
     func configureHierarchy() {
@@ -88,6 +104,31 @@ class BoxOfficeViewController: UIViewController {
         movieTableView.dataSource = self
         movieTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: identifier)
         movieTableView.backgroundColor = .clear
+    }
+    
+    func callRequest() {
+        let url = APIURL.movieURL
+        let yesterday = getYesterday()
+        let yesterdayURL = url + yesterday
+        AF.request(yesterdayURL).responseDecodable(of: BoxOfficeResult.self) { response in
+            switch response.result {
+            case .success(let value):
+                let dailyBoxOfficeData = value.boxOfficeResult.dailyBoxOfficeList
+                for movieData in dailyBoxOfficeData {
+                    print(movieData.movieNm)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getYesterday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        print(dateFormatter.string(from: yesterday))
+        return dateFormatter.string(from: yesterday)
     }
 }
 

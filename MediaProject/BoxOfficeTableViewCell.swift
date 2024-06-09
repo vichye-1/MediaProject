@@ -50,7 +50,7 @@ class BoxOfficeTableViewCell: UITableViewCell {
     }
     
     func configureTableViewCellUI() {
-        rankingLabel.backgroundColor = .blue
+        rankingLabel.backgroundColor = .white
         titleLabel.backgroundColor = .purple
         dateLabel.backgroundColor = .cyan
     }
